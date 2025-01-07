@@ -5,28 +5,60 @@ const Invitation = () => {
   return (
     <section
       id="convite"
-      className="min-h-screen flex items-center justify-center px-4 bg-[#121212]"
+      className="min-h-screen flex items-center justify-center px-4 bg-[#171717]"
     >
       <motion.div
-        className="relative bg-[#2C2C2C] text-white p-8 rounded-lg shadow-lg max-w-xl mx-auto flex items-center justify-center"
-        style={{
-          background: "linear-gradient(145deg, #1a1a1a, #333333)",
-          borderRadius: "12px",
-        }}
+        className="relative bg-[#efe2c3] text-[#4a3b28] border-4 border-[#4a3b28] rounded-xl w-96 h-40 shadow-md overflow-visible"
         whileHover={{
-          y: -10, // Faz o ticket "subir" suavemente para dar a sensação de destaque
-          scale: 1.05,
-          rotate: 2,
-          boxShadow: "0px 4px 15px rgba(255, 255, 255, 0.3)", // A sombra também aumenta para criar o efeito de destaque
-          transition: { type: "spring", stiffness: 100, damping: 25 },
+          y: -10, // Faz o ticket "subir"
+          scale: 1.05, // Amplia o ticket levemente
+          rotate: 2, // Aplica uma leve rotação
+          boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.5)", // Aumenta a sombra
         }}
-        initial={{ y: 0 }}
-        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#4e4e4e] to-[#2b2b2b] rounded-lg opacity-20"></div>
-        <div className="relative z-10 text-center">
-          <h2 className="text-3xl font-bold mb-4">Adquira um Convite</h2>
-          <p className="text-lg">Venha viver a experiência única que só o nosso bar exclusivo pode oferecer.</p>
+        {/* Demarcação com buracos grandes - Esquerda */}
+        <div className="absolute -left-4 top-0 bottom-0 flex flex-col justify-between">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="w-6 h-5 bg-[#171717] rounded-full"
+            />
+          ))}
+        </div>
+        {/* Demarcação com buracos grandes - Direita */}
+        <div className="absolute -right-4 top-0 bottom-0 flex flex-col justify-between">
+          {[...Array(6)].map((_, i) => (
+            <div
+              key={i}
+              className="w-6 h-5 bg-[#171717] rounded-full"
+            />
+          ))}
+        </div>
+
+        {/* Corpo do Ticket */}
+        <div className="flex w-full h-full">
+          {/* Parte esquerda */}
+          <div className="flex items-center justify-center w-1/4 border-r-4 border-[#2C2C2C] relative">
+            {/* Bolinha no topo sobre a linha divisória */}
+            <div className="absolute top-[-6px] right-[-8px] w-3 h-3 bg-[#171717] rounded-full" />
+            {/* Bolinha no pé sobre a linha divisória */}
+            <div className="absolute bottom-[-6px] right-[-8px] w-3 h-3 bg-[#171717] rounded-full" />
+            <p className="rotate-90 text-lg font-bold tracking-wide">
+              EXPERIÊNCIA ÚNICA
+            </p>
+          </div>
+          {/* Parte direita */}
+          <div className="flex flex-col items-center justify-center w-3/4 px-4 text-center">
+            <p className="text-lg font-bold uppercase">Convite Exclusivo</p>
+            <p className="text-sm font-semibold">Bar Experience</p>
+            <p className="mt-2 text-xs italic font-medium">
+              - Uma noite única e inesquecível -
+            </p>
+            <p className="mt-4 text-xs">
+              Válido para <span className="font-bold">02 pessoas</span>
+            </p>
+          </div>
         </div>
       </motion.div>
     </section>
