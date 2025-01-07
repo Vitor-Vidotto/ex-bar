@@ -10,9 +10,9 @@ const Invitation = () => {
       <motion.div
         className="relative bg-[#efe2c3] text-[#4a3b28] border-4 border-[#4a3b28] rounded-xl w-96 h-40 shadow-md overflow-visible"
         whileHover={{
-          y: -10, // Faz o ticket "subir"
-          scale: 1.05, // Amplia o ticket levemente
-          rotate: 2, // Aplica uma leve rotação
+          y: -12, // Faz o ticket "subir"
+          scale: 1.15, // Amplia o ticket levemente
+          rotate:-4, // Aplica uma leve rotação
           boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.5)", // Aumenta a sombra
         }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
