@@ -19,8 +19,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-20 bg-[#121212] bg-opacity-100 border-b border-[#33353F]">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         {/* Logo */}
-        <Link href="/" className="text-2xl md:text-4xl font-semibold text-white">
-          Bar
+        <Link href="/" className="text-2xl md:text-4xl font-mono text-white">
+          Velvet
         </Link>
 
         {/* Botão de Menu Mobile */}
